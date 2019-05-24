@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>FiveHandPoker</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel = "stylesheet" type = "text/css" href = "foundation.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        .grid-container {
+          display: inline-block;
+        }
+          img {
+            height: 10rem;
+            padding: 15px, 15px, 15px, 15px;
+          }
+          .switch {
+            position: relative;
+            display: inline-block;
+            width: 90px;
+            height: 34px;
+          }
+
+          .drop-zone {
+            display: inline-block;
+          }
+        .switch input {display:none;}
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ca2222;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        input:checked + .slider {
+          background-color: #2ab934;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(55px);
+          -ms-transform: translateX(55px);
+          transform: translateX(55px);
+        }
+
+        /*------ ADDED CSS ---------*/
+        .on
+        {
+          display: none;
+        }
+
+        .on, .off
+        {
+          color: white;
+          position: absolute;
+          transform: translate(-50%,-50%);
+          top: 50%;
+          left: 50%;
+          font-size: 10px;
+          font-family: Verdana, sans-serif;
+        }
+
+        input:checked+ .slider .on
+        {display: block;}
+
+        input:checked + .slider .off
+        {display: none;}
+
+        /*--------- END --------*/
+
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;}
+        </style>
+    </head>
+    <body>
+      <div class="grid-container fluid">
+        <div class="grid-x">
+          <div class="drop-zone">
+            <h2>Player One Cards:</h2>
+            <div class="col-small-12" id="playerOneRow"></div>
+          </div>
+          <div class="cell auto" id="playerOneCard"></div>
+        </div>
+      </div>
+
+      <div class="grid-container fluid">
+        <div class="grid-x">
+          <div class="drop-zone">
+            <h2>Player Two Cards:</h2>
+            <div class="col-small-12"  id="playerTwoRow"></div>
+          </div>
+            <label class="switch">
+              <input type="checkbox" id="togBtn">
+              <div class="slider round">
+                <span class="on">CPU</span>
+                <span class="off">CPU</span>
+              </div>
+            </label>
+          <div class="cell auto" id="playerTwoCard"></div>
+        </div>
+      </div>
+
+
+
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/game.js"></script>
+    </body>
+</html>
